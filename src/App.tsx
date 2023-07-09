@@ -8,6 +8,14 @@ import { useTheme } from "next-themes"
 import IconToggleRight from "./components/icons/IconToggleRight"
 import { useState } from "react"
 import IconCarrot from "./components/icons/IconCarrot"
+import SendMessage from "./components/modal/SendMessage"
+import Button from "./components/buttons/Button"
+
+// import resolveConfig from "tailwindcss/resolveConfig"
+// import config from "../tailwind.config"
+
+// const fullConfig = resolveConfig(config)
+// console.log(fullConfig)
 
 const techs = ["React", "Next", "Node", "PHP"]
 
@@ -15,26 +23,19 @@ export function App() {
   const [emailInput, setEmailInput] = useState("")
   const { theme, setTheme } = useTheme()
 
-  const ThemeIcon = theme == "dark" ? IconToggleLeft : IconToggleRight
+  const isInDarkMode = theme == "dark"
+  const ThemeIcon = isInDarkMode ? IconToggleLeft : IconToggleRight
 
   return (
-    <div className="_first grid place-items-center h-screen">
+    <div className="_first grid place-items-center min-h-screen">
       <div className="_action">
-        <button
-          onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
-          className={twMerge(
-            "h-12 px-8 flex items-center gap-2 rounded-lg my-6",
-            "bg-background-base text-fore-ground border border-ring-base hover:bg-background-shadow",
-            "outline-none focus:outline-1 focus:outline-offset-2 focus:outline-ring-strong",
-            "dark:bg-transparent dark:hover:bg-white/5"
-          )}
-        >
+        <Button onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}>
           <span className="whitespace-nowrap">Trocar tema</span>
           <ThemeIcon
             size={24}
             className="text-symbol"
           />
-        </button>
+        </Button>
       </div>
       <Example className="py-6 flex md:flex-row flex-col m-6 px-6 md:px-0">
         <div
@@ -64,7 +65,7 @@ export function App() {
               Currently, I am working on designing intuitive mobile app interfaces, creating
               engaging website layouts, and collaborating with clients to develop impactful branding
               strategies...{" "}
-              <span className="font-normal text-fore-support hover:underline hover:cursor-pointer">
+              <span className="font-normal text-vitormarkis hover:underline hover:cursor-pointer">
                 Ver mais
               </span>
             </A.Paragraph>
@@ -78,18 +79,13 @@ export function App() {
               value={emailInput}
               onChange={e => setEmailInput(e.target.value)}
             />
-            <button
-              className={twMerge(
-                "_secondary rounded-lg h-12 px-4 flex items-center justify-center gap-2 w-full",
-                "text-fore-ground bg-background-base",
-                "hover:bg-background-shadow",
-                "disabled:bg-background-opposite disabled:cursor-not-allowed",
-                "outline-none focus:outline-1 focus:outline-offset-2 focus:outline-ring-strong"
-              )}
+            <Button
+              className="_secondary"
+              styleType="normal"
               disabled={emailInput.length === 0}
             >
               Send
-            </button>
+            </Button>
           </div>
         </div>
         <div className={twMerge("flex-1 flex flex-col", "md:px-6")}>
@@ -144,39 +140,27 @@ export function App() {
               <A.Paragraph>
                 Não possui a classe <strong>_action</strong>, herda as estilizações do pai
               </A.Paragraph>
-              <button
-                className={twMerge(
-                  "h-12 px-8 w-full flex items-center justify-center gap-2 rounded-lg",
-                  "bg-background-base text-fore-ground border border-ring-base hover:bg-background-shadow",
-                  "outline-none focus:outline-1 focus:outline-offset-2 focus:outline-ring-strong",
-                  "dark:bg-transparent dark:hover:bg-fore-ground/10"
-                )}
-              >
+              <Button>
                 <span className="whitespace-nowrap">Sem _action</span>
                 <IconCarrot
                   size={24}
                   className="text-symbol"
                 />
-              </button>
+              </Button>
             </div>
             <div>
               <A.Paragraph>
                 Possui a classe <strong>_action</strong>, possui suas próprias estilizações
               </A.Paragraph>
-              <button
-                className={twMerge(
-                  "_action h-12 px-8 w-full flex items-center justify-center gap-2 rounded-lg",
-                  "bg-background-base text-fore-ground border border-ring-base hover:bg-background-shadow",
-                  "outline-none focus:outline-1 focus:outline-offset-2 focus:outline-ring-strong",
-                  "dark:bg-transparent dark:hover:bg-fore-ground/10"
-                )}
-              >
-                <span className="whitespace-nowrap">Com _action</span>
-                <IconCarrot
-                  size={24}
-                  className="text-symbol"
-                />
-              </button>
+              <SendMessage>
+                <Button
+                  styleType={isInDarkMode ? "outlined" : "normal"}
+                  className="_action"
+                >
+                  <span className="whitespace-nowrap">Excluir item</span>
+                  <IconCarrot size={24} />
+                </Button>
+              </SendMessage>
             </div>
           </div>
         </div>

@@ -11,13 +11,13 @@ export function Example({ ...props }: ExampleProps) {
       {...props}
       className={twMerge(
         "max-w-[60rem]",
-        props.className,
         `
         bg-background-base
         border
         border-ring-base
         text-fore-ground
-        `
+        `,
+        props.className
       )}
     >
       {props.children}

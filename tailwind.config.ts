@@ -1,9 +1,9 @@
 import type { Config } from "tailwindcss"
-import { simonSwiss } from "./src/lib/simonswiss/plugin"
+import { markisPlugin } from "./src/lib/tailwind/plugin"
 
 const config = {
   darkMode: "class",
-  plugins: [simonSwiss],
+  plugins: [markisPlugin],
   content: ["index.html", "./src/**/*.{js,jsx,ts,tsx}"],
 } satisfies Config
 
