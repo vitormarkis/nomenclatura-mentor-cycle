@@ -1,0 +1,60 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: "class",
+  content: ["index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+    colors: {
+      transparent: "transparent",
+      white: "#fff",
+      black: "#000",
+      "picton-blue": {
+        50: "rgb(var(--picton-blue-50) / <alpha-value>)",
+        100: "rgb(var(--picton-blue-100) / <alpha-value>)",
+        200: "rgb(var(--picton-blue-200) / <alpha-value>)",
+        300: "rgb(var(--picton-blue-300) / <alpha-value>)",
+        400: "rgb(var(--picton-blue-400) / <alpha-value>)",
+        500: "rgb(var(--picton-blue-500) / <alpha-value>)",
+        600: "rgb(var(--picton-blue-600) / <alpha-value>)",
+        700: "rgb(var(--picton-blue-700) / <alpha-value>)",
+        800: "rgb(var(--picton-blue-800) / <alpha-value>)",
+        900: "rgb(var(--picton-blue-900) / <alpha-value>)",
+        950: "rgb(var(--picton-blue-950) / <alpha-value>)",
+      },
+      "chateau-green": {
+        50: "rgb(var(--chateau-green-50) / <alpha-value>)",
+        100: "rgb(var(--chateau-green-100) / <alpha-value>)",
+        200: "rgb(var(--chateau-green-200) / <alpha-value>)",
+        300: "rgb(var(--chateau-green-300) / <alpha-value>)",
+        400: "rgb(var(--chateau-green-400) / <alpha-value>)",
+        500: "rgb(var(--chateau-green-500) / <alpha-value>)",
+        600: "rgb(var(--chateau-green-600) / <alpha-value>)",
+        700: "rgb(var(--chateau-green-700) / <alpha-value>)",
+        800: "rgb(var(--chateau-green-800) / <alpha-value>)",
+        900: "rgb(var(--chateau-green-900) / <alpha-value>)",
+        950: "rgb(var(--chateau-green-950) / <alpha-value>)",
+      },
+      background: {
+        base: "rgb(var(--background-base) / <alpha-value>)",
+        shadow: "rgb(var(--background-shadow) / <alpha-value>)",
+        opposite: "rgb(var(--background-opposite) / <alpha-value>)",
+      },
+      ring: {
+        base: "rgb(var(--ring-base) / <alpha-value>)",
+        strong: "rgb(var(--ring-strong) / <alpha-value>)",
+      },
+      fore: {
+        heading: {
+          base: "rgb(var(--fore-heading-base) / <alpha-value>)",
+          soft: "rgb(var(--fore-heading-soft) / <alpha-value>)",
+        },
+        ground: "rgb(var(--fore-ground) / <alpha-value>)",
+        soft: "rgb(var(--fore-soft) / <alpha-value>)",
+        strong: "rgb(var(--fore-strong) / <alpha-value>)",
+        support: "rgb(var(--fore-support) / <alpha-value>)",
+      },
+      symbol: "rgb(var(--symbol) / <alpha-value>)",
+    },
+  },
+  plugins: [],
+}
