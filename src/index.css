@@ -2,35 +2,6 @@
 @tailwind utilities;
 @tailwind components;
 
-
-:root {
-  --chateau-green-50: 241 252 243;
-  --chateau-green-100: 223 249 229;
-  --chateau-green-200: 193 241 204;
-  --chateau-green-300: 144 229 165;
-  --chateau-green-400: 88 208 117;
-  --chateau-green-500: 51 185 84;
-  --chateau-green-600: 36 149 64;
-  --chateau-green-700: 31 118 53;
-  --chateau-green-800: 30 93 46;
-  --chateau-green-900: 26 77 40;
-  --chateau-green-950: 9 42 19;
-
-  --picton-blue-50: 241 248 253;
-  --picton-blue-100: 222 238 251;
-  --picton-blue-200: 197 228 248;
-  --picton-blue-300: 157 211 243;
-  --picton-blue-400: 111 185 235;
-  --picton-blue-500: 70 153 227;
-  --picton-blue-600: 56 130 216;
-  --picton-blue-700: 47 109 198;
-  --picton-blue-800: 44 88 161;
-  --picton-blue-900: 40 76 128;
-  --picton-blue-950: 29 47 78;
-
-
-}
-
 #root {
   font-family: "Inter";
   /* font-family: "Roboto"; */
@@ -42,7 +13,7 @@
 
 }
 
-._first {
+/* ._first {
   --background-base: 249 249 249;
   --background-shadow: 233 233 233;
   --background-opposite: 220 220 220;
@@ -55,7 +26,7 @@
   --fore-strong: 70 70 70;
   --fore-support: var(--picton-blue-500);
   --symbol: 140 140 140;
-}
+} */
 
 ._second {
   --background-base: 233 233 233;
