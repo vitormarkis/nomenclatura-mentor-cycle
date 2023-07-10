@@ -49,12 +49,7 @@ export default function SendMessage({ children, ...props }: SendMessageProps) {
               >
                 Cancelar
               </Button>
-              <Button
-                styleType={isInDarkMode ? "outlined" : "normal"}
-                className="_action"
-              >
-                Confirmar
-              </Button>
+              <Button className="_action">Confirmar</Button>
             </div>
           </div>
         </Dialog.Content>,

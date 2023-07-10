@@ -1,3 +1,5 @@
+import { appColors } from "./colors"
+import { extractRGBColor } from "./themesWork"
 import { TWObjectColorsMaybe } from "./types"
 
 export function getUniqueCSSVariables(twColors: TWObjectColorsMaybe) {
@@ -43,4 +45,19 @@ export function generateColorObjects(inputArray: string[]) {
   })
 
   return result
+}
+
+export function generateRGBVariables(appColorsObj: typeof appColors) {
+  const variables = appColorsObj[":root"]
+  const entries = Object.entries(variables)
+  const resolved = entries.map(([k, v]) => {
+    const newValue = extractRGBColor(v)
+    return [k, newValue]
+  })
+  const result = Object.fromEntries(resolved)
+  return {
+    ":root": {
+      ...result,
+    },
+  }
 }

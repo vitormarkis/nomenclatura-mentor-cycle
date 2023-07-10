@@ -16,7 +16,7 @@ export function getAllThemesRGB(themes: TWObjectColorsMaybe): TWObjectColorsMayb
   return result
 }
 
-function extractRGBColor(value: string) {
+export function extractRGBColor(value: string) {
   if (!isRGB(value)) return value
   if (isVariable(value)) return value
   if (isEmpty(value)) return value
