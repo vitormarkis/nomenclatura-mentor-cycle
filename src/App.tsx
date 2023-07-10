@@ -10,6 +10,7 @@ import { useState } from "react"
 import IconCarrot from "./components/icons/IconCarrot"
 import SendMessage from "./components/modal/SendMessage"
 import Button from "./components/buttons/Button"
+import { useLayers } from "./states/useLayers"
 
 // import resolveConfig from "tailwindcss/resolveConfig"
 // import config from "../tailwind.config"
@@ -21,16 +22,36 @@ const techs = ["React", "Next", "Node", "PHP"]
 
 export function App() {
   const [emailInput, setEmailInput] = useState("")
+  const { layerSequence, moveLayerSequence } = useLayers()
   const { theme, setTheme } = useTheme()
 
   const isInDarkMode = theme == "dark"
   const ThemeIcon = isInDarkMode ? IconToggleLeft : IconToggleRight
 
   return (
-    <div className="_first grid place-items-center min-h-screen">
-      <div className="_action">
-        <Button onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}>
+    <div
+      className={twMerge(
+        "grid place-items-center min-h-screen bg-background-root",
+        layerSequence[0]
+      )}
+    >
+      <div className="flex gap-4">
+        <Button
+          className="_action"
+          onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
+        >
           <span className="whitespace-nowrap">Trocar tema</span>
+          <ThemeIcon
+            size={24}
+            className="text-symbol"
+          />
+        </Button>
+        <Button
+          onClick={moveLayerSequence}
+          styleType="outlined"
+          className="_secondary"
+        >
+          <span className="whitespace-nowrap">Mover layers</span>
           <ThemeIcon
             size={24}
             className="text-symbol"
@@ -75,7 +96,10 @@ export function App() {
             <A.Input
               type="email"
               placeholder="yourname@mail.com.br"
-              className="_second mb-2 placeholder:text-fore-soft text-fore-strong"
+              className={twMerge(
+                "mb-2 placeholder:text-fore-soft text-fore-strong",
+                layerSequence[1]
+              )}
               value={emailInput}
               onChange={e => setEmailInput(e.target.value)}
             />
@@ -95,13 +119,16 @@ export function App() {
               <A.SubHeading>Some technologies I have been studying</A.SubHeading>
             </div>
 
-            <div className="_second flex gap-3 p-3 rounded-lg bg-background-base">
+            <div
+              className={twMerge("flex gap-3 p-3 rounded-lg bg-background-base", layerSequence[1])}
+            >
               <div className="flex flex-wrap gap-3">
                 {techs.map(t => (
                   <div
                     className={twMerge(
-                      "_third h-8 pl-4 pr-2 flex items-center rounded-full text-fore-ground",
-                      "bg-background-base"
+                      "h-8 pl-4 pr-2 flex items-center rounded-full text-fore-ground",
+                      "bg-background-base",
+                      layerSequence[2]
                     )}
                   >
                     <span className="whitespace-nowrap">{t}</span>

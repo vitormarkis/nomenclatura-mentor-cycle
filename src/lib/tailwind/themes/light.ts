@@ -2,6 +2,7 @@ import { TWObjectColorsMaybe } from "../types"
 
 export const lightModeColors = {
   "._first": {
+    "--background-root": "rgba(255, 255, 255)",
     "--background-base": "rgba(249, 249, 249)",
     "--background-shadow": "rgba(233, 233, 233)",
     "--background-opposite": "rgba(220, 220, 220)",
@@ -17,6 +18,7 @@ export const lightModeColors = {
     "--fore-accent": "var(--sunset-red-500)",
   },
   "._second": {
+    "--background-root": "rgba(249, 249, 249)",
     "--background-base": "rgba(233, 233, 233)",
     "--background-shadow": "rgba(217, 217, 217)",
     "--background-opposite": "rgba(204, 204, 204)",
@@ -29,11 +31,17 @@ export const lightModeColors = {
     "--fore-soft": "rgba(154, 154, 154)",
   },
   "._third": {
+    "--background-root": "rgba(233, 233, 233)",
     "--background-base": "rgba(217, 217, 217)",
     "--background-shadow": "rgba(201, 201, 201)",
     "--background-opposite": "rgba(185, 185, 185)",
-    "--fore-ground": "rgba(98, 98, 98)",
-    "--symbol": "rgba(150, 150, 150)",
+    "--fore-ground": "rgba(120, 120, 120)",
+    "--symbol": "rgba(120, 120, 120)",
+
+    "--ring-base": "rgba(185, 185, 201)",
+    "--fore-heading-base": "rgba(40, 40, 40)",
+    "--fore-heading-soft": "rgba(60, 60, 60)",
+    "--fore-soft": "rgba(154, 154, 154)",
   },
   "._action": {
     "--background-base": "rgba(51, 185, 84)",

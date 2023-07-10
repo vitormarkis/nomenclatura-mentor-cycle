@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "tailwind-merge": "^1.13.2",
     "tailwindcss": "^3.3.2",
-    "tailwindcss-theme-swapper": "^0.6.5"
+    "tailwindcss-theme-swapper": "^0.6.5",
+    "zustand": "^4.3.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

@@ -4,7 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog"
 import ReactDOM from "react-dom"
 import { Atom as A } from "../atoms"
 import Button from "../buttons/Button"
-import { useTheme } from "next-themes"
+import { useLayers } from "../../states/useLayers"
 
 interface SendMessageProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode
@@ -12,9 +12,7 @@ interface SendMessageProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export default function SendMessage({ children, ...props }: SendMessageProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const { theme } = useTheme()
-
-  const isInDarkMode = theme == "dark"
+  const { layerSequence } = useLayers()
 
   const toggleModal = () => setIsModalOpen(isOpen => !isOpen)
 
@@ -33,8 +31,9 @@ export default function SendMessage({ children, ...props }: SendMessageProps) {
           <div
             {...props}
             className={twMerge(
-              "_first max-w-[24rem] w-full z-[10]",
+              "max-w-[24rem] w-full z-[10]",
               "bg-background-base border border-ring-base p-6 rounded-lg text-fore-ground",
+              layerSequence[0],
               props.className
             )}
           >

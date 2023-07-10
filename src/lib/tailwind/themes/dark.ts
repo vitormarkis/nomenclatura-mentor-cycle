@@ -2,6 +2,7 @@ import { NewTheme, TWObjectColorsMaybe } from "../types"
 
 export const darkModeColors: NewTheme<"dark"> = {
   ".dark ._first": {
+    "--background-root": "rgba(0, 0, 0)",
     "--background-base": "rgba(0, 0, 0)",
     "--background-shadow": "rgba(20, 20, 20)",
     "--ring-base": "rgba(47, 47, 47)",
@@ -14,6 +15,7 @@ export const darkModeColors: NewTheme<"dark"> = {
     "--symbol": "rgba(130, 130, 130)",
   },
   ".dark ._second": {
+    "--background-root": "rgba(0, 0, 0)",
     "--background-base": "rgba(30, 30, 30)",
     "--background-shadow": "rgba(50, 50, 50)",
     "--ring-base": "rgba(43, 43, 43)",
@@ -23,6 +25,7 @@ export const darkModeColors: NewTheme<"dark"> = {
     "--fore-soft": "rgba(145, 145, 145)",
   },
   ".dark ._third": {
+    "--background-root": "rgba(30, 30, 30)",
     "--background-base": "rgba(50, 50, 50)",
     "--background-shadow": "rgba(60, 60, 60)",
     "--fore-ground": "rgba(160, 160, 160)",

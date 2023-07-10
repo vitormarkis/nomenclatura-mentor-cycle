@@ -2,22 +2,23 @@ import { appColors } from "./colors"
 import { lightModeColors } from "./themes"
 
 type cssVaribles = keyof (typeof appColors)[":root"]
-type Stringx = `var(${cssVaribles})` | `rgb(${string})` | `rgba(${string})`
+type ValidColorValue = `var(${cssVaribles})` | `rgb(${string})` | `rgba(${string})`
 
 export interface TWVariablesColors {
-  "--background-base": Stringx
-  "--background-shadow": Stringx
-  "--background-opposite": Stringx
-  "--ring-base": Stringx
-  "--ring-strong": Stringx
-  "--fore-heading-base": Stringx
-  "--fore-heading-soft": Stringx
-  "--fore-ground": Stringx
-  "--fore-soft": Stringx
-  "--fore-strong": Stringx
-  "--fore-support": Stringx
-  "--fore-accent": Stringx
-  "--symbol": Stringx
+  "--background-root": ValidColorValue
+  "--background-base": ValidColorValue
+  "--background-shadow": ValidColorValue
+  "--background-opposite": ValidColorValue
+  "--ring-base": ValidColorValue
+  "--ring-strong": ValidColorValue
+  "--fore-heading-base": ValidColorValue
+  "--fore-heading-soft": ValidColorValue
+  "--fore-ground": ValidColorValue
+  "--fore-soft": ValidColorValue
+  "--fore-strong": ValidColorValue
+  "--fore-support": ValidColorValue
+  "--fore-accent": ValidColorValue
+  "--symbol": ValidColorValue
 }
 
 export type TWObjectColors = Record<string, TWVariablesColors>

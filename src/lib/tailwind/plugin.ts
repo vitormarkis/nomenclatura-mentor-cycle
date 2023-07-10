@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin"
 import { generateColorObjects, generateRGBVariables, getUniqueCSSVariables } from "./helpers"
-import { allThemesLayers } from "./themes"
+import { allThemesLayers, darkModeColors, lightModeColors } from "./themes"
 import { appColors } from "./colors"
 import { getAllThemesRGB } from "./themesWork"
 
@@ -16,8 +16,8 @@ export const markisPlugin = plugin(
     const allThemesRGB = getAllThemesRGB(allThemesLayers)
 
     addBase({
-      ...allThemesRGB,
       ...appColorsRGB,
+      ...allThemesRGB,
     })
   },
   {
