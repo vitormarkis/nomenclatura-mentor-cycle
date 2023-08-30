@@ -2,197 +2,172 @@
 @tailwind utilities;
 @tailwind components;
 
-
-:root {
-  --chateau-green-50: 241 252 243;
-  --chateau-green-100: 223 249 229;
-  --chateau-green-200: 193 241 204;
-  --chateau-green-300: 144 229 165;
-  --chateau-green-400: 88 208 117;
-  --chateau-green-500: 51 185 84;
-  --chateau-green-600: 36 149 64;
-  --chateau-green-700: 31 118 53;
-  --chateau-green-800: 30 93 46;
-  --chateau-green-900: 26 77 40;
-  --chateau-green-950: 9 42 19;
-
-  --picton-blue-50: 241 248 253;
-  --picton-blue-100: 222 238 251;
-  --picton-blue-200: 197 228 248;
-  --picton-blue-300: 157 211 243;
-  --picton-blue-400: 111 185 235;
-  --picton-blue-500: 70 153 227;
-  --picton-blue-600: 56 130 216;
-  --picton-blue-700: 47 109 198;
-  --picton-blue-800: 44 88 161;
-  --picton-blue-900: 40 76 128;
-  --picton-blue-950: 29 47 78;
-
-
+@media (max-width: 640px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 #root {
   font-family: "Inter";
   /* font-family: "Roboto"; */
-  background-color: #f7f7f7;
+  background-color: theme('colors.background.DEFAULT');
 }
 
-.dark #root {
-  background-color: #000;
+:root {
+  --action-hue: 240;
+  --action-saturation: 56%;
 
+  --neutral-hue: 227;
+  --neutral-sat: 11%;
+
+  --white: var(--neutral-hue) var(--neutral-sat) 100%;
+  --white-100: var(--neutral-hue) var(--neutral-sat) 95%;
+  --white-200: var(--neutral-hue) var(--neutral-sat) 90%;
+  --white-300: var(--neutral-hue) var(--neutral-sat) 85%;
+  --white-400: var(--neutral-hue) var(--neutral-sat) 80%;
+  --white-500: var(--neutral-hue) var(--neutral-sat) 75%;
+  --white-600: var(--neutral-hue) var(--neutral-sat) 70%;
+  --white-700: var(--neutral-hue) var(--neutral-sat) 65%;
+  --white-800: var(--neutral-hue) var(--neutral-sat) 60%;
+  --white-900: var(--neutral-hue) var(--neutral-sat) 55%;
+
+  --black: var(--neutral-hue) var(--neutral-sat) 0%;
+  --black-100: var(--neutral-hue) var(--neutral-sat) 5%;
+  --black-200: var(--neutral-hue) var(--neutral-sat) 10%;
+  --black-300: var(--neutral-hue) var(--neutral-sat) 15%;
+  --black-400: var(--neutral-hue) var(--neutral-sat) 20%;
+  --black-500: var(--neutral-hue) var(--neutral-sat) 25%;
+  --black-600: var(--neutral-hue) var(--neutral-sat) 30%;
+  --black-700: var(--neutral-hue) var(--neutral-sat) 35%;
+  --black-800: var(--neutral-hue) var(--neutral-sat) 40%;
+  --black-900: var(--neutral-hue) var(--neutral-sat) 45%;
 }
 
-._first {
-  --background-base: 249 249 249;
-  --background-shadow: 233 233 233;
-  --background-opposite: 220 220 220;
-  --ring-base: 215 215 215;
-  --ring-strong: 180 180 180;
-  --fore-heading-base: 55 55 55;
-  --fore-heading-soft: 80 80 80;
-  --fore-ground: 140 140 140;
-  --fore-soft: 160 160 160;
-  --fore-strong: 70 70 70;
-  --fore-support: var(--picton-blue-500);
-  --symbol: 140 140 140;
+._floor {
+  --background: var(--white);
+  --background-alt: var(--white-200);
+  --background-shade: var(--white-200);
+  --color: var(--black-900);
+  --color-strong: var(--black);
+  --color-soft: var(--white-900);
+  --heading: var(--black);
+  --heading-soft: var(--black);
+  --heading-sub: var(--white-900);
+  --ring: var(--white-200);
+  --ring-strong: var(--white-400);
+  --ring-soft: var(--white);
+  --symbol: var(--color);
+  --symbol-strong: var(--color-strong);
+  --symbol-soft: var(--color-soft);
 }
 
-._second {
-  --background-base: 233 233 233;
-  --background-shadow: 217 217 217;
-  --background-opposite: 204 204 204;
-  /* --ring-base: 215 215 215; */
-  /* --ring-strong: 180 180 180; */
-  /* --fore-heading-base: 55 55 55; */
-  /* --fore-heading-soft: 80 80 80; */
-  --fore-ground: 114 114 114;
-  /* --fore-soft: ""; */
-  /* --fore-strong: 60 60 60; */
-  /* --fore-support: 10 10 10; */
-  --symbol: 150 150 150;
+._surface {
+  --background: var(--white-100);
+  --background-alt: var(--white-300);
+  --background-shade: var(--white-300);
 }
 
-._third {
-  --background-base: 217 217 217;
-  --background-shadow: 201 201 201;
-  --background-opposite: 185 185 185;
-  /* --ring-base: 215 215 215; */
-  /* --ring-strong: 180 180 180; */
-  /* --fore-heading-base: 55 55 55; */
-  /* --fore-heading-soft: 80 80 80; */
-  --fore-ground: 98 98 98;
-  /* --fore-soft: ""; */
-  /* --fore-strong: 60 60 60; */
-  /* --fore-support: 10 10 10; */
-  --symbol: 150 150 150;
+._ground {
+  --background: var(--white-200);
+  --background-alt: var(--white-400);
+  --background-shade: var(--white-400);
+}
+
+._support {
+  --action-hue: 510;
+  --action-saturation: 61%;
+}
+
+._warn {
+  --action-hue: 40;
+  --action-saturation: 71%;
+}
+
+._action,
+._action_fore {
+  --action-color-50: var(--action-hue) var(--action-saturation) 90%;
+  --action-color-100: var(--action-hue) var(--action-saturation) 80%;
+  --action-color-200: var(--action-hue) var(--action-saturation) 70%;
+  --action-color-300: var(--action-hue) var(--action-saturation) 60%;
+  --action-color-400: var(--action-hue) var(--action-saturation) 55%;
+  --action-color-500: var(--action-hue) var(--action-saturation) 50%;
+  --action-color-600: var(--action-hue) var(--action-saturation) 45%;
+  --action-color-700: var(--action-hue) var(--action-saturation) 40%;
+  --action-color-800: var(--action-hue) var(--action-saturation) 30%;
+  --action-color-900: var(--action-hue) var(--action-saturation) 20%;
+  --action-color-950: var(--action-hue) var(--action-saturation) 10%;
 }
 
 ._action {
-  --background-base: var(--chateau-green-500);
-  --background-shadow: 46 168 77;
-  --background-opposite: var(--chateau-green-600);
-  --ring-base: var(--chateau-green-500);
-  --ring-strong: var(--chateau-green-600);
-  /* --fore-heading-base: 55 55 55; */
-  /* --fore-heading-soft: 80 80 80; */
-  --fore-ground: 255 255 255;
-  /* --fore-soft: ""; */
-  /* --fore-strong: 60 60 60; */
-  /* --fore-support: 10 10 10; */
-  --symbol: 255 255 255;
+  --background: var(--action-color-500);
+  --background-alt: var(--action-color-600);
+  --background-shade: var(--action-color-600);
+  --color: var(--color-strong);
+  --color-strong: var(--white);
+  --color-soft: var(--color-strong);
+  --heading: var(--color-strong);
+  --heading-soft: var(--color-strong);
+  --heading-sub: var(--color-strong);
+  --ring: var(--action-color-700);
+  --ring-strong: var(--action-color-800);
+  --ring-soft: var(--action-color-600);
+  --symbol: var(--color);
+  --symbol-strong: var(--color-strong);
+  --symbol-soft: var(--color-soft);
 }
 
-._secondary {
-  --background-base: var(--picton-blue-500);
-  --background-shadow: var(--picton-blue-600);
-  --background-opposite: var(--picton-blue-700);
-  --ring-base: var(--picton-blue-500);
-  --ring-strong: var(--picton-blue-600);
-  /* --fore-heading-base: 255 255 255; */
-  /* --fore-heading-soft: 200 200 200; */
-  --fore-ground: 255 255 255;
-  /* --fore-soft: ""; */
-  /* --fore-strong: 210 210 210; */
-  /* --fore-support: 10 10 10; */
-  --symbol: 255 255 255;
+._action_fore {
+  --color: var(--action-color-300);
+  --color-strong: var(--action-color-600);
+  --color-soft: var(--action-color-400);
+  --heading: var(--action-color-600);
+  --heading-soft: var(--action-color-500);
+  --heading-sub: var(--action-color-500);
 }
 
-
-/* --middleground-base: 233 233 233;
---middleground-shadow: 217 217 217;
---frontground-base: 217 217 217;
---frontground-shadow: 201 201 201; */
-
-.dark ._first {
-  --background-base: 0 0 0;
-  --background-shadow: 236 236 236;
-  --background-opposite: "";
-  --ring-base: 47 47 47;
-  --ring-strong: 70 70 70;
-  --fore-heading-base: 255 255 255;
-  --fore-heading-soft: 175 175 175;
-  --fore-ground: 130 130 130;
-  --fore-soft: 110 110 110;
-  --fore-strong: 255 255 255;
-  /* --fore-support: 10 10 10; */
-  --symbol: 130 130 130;
+.dark ._floor {
+  --background: var(--black);
+  --background-alt: var(--black-200);
+  --background-shade: var(--black-200);
+  --color: var(--white-900);
+  --color-strong: var(--white);
+  --color-soft: var(--black-900);
+  --heading: var(--white);
+  --heading-soft: var(--white);
+  --heading-sub: var(--black-900);
+  --ring: var(--black-200);
+  --ring-strong: var(--black-400);
+  --ring-soft: var(--black);
+  --symbol: var(--color);
+  --symbol-strong: var(--color-strong);
+  --symbol-soft: var(--color-soft);
 }
 
-.dark ._second {
-  --background-base: 30 30 30;
-  --background-shadow: 50 50 50;
-  --background-opposite: "";
-  /* --ring-base: 47 47 47; */
-  /* --ring-strong: 70 70 70; */
-  /* --fore-heading-base: 255 255 255; */
-  /* --fore-heading-soft: 200 200 200; */
-  --fore-ground: 145 145 145;
-  /* --fore-soft: ""; */
-  /* --fore-strong: 210 210 210; */
-  /* --fore-support: 10 10 10; */
-  --symbol: 145 145 145;
+.dark ._surface {
+  --background: var(--black-200);
+  --background-alt: var(--black-400);
+  --background-shade: var(--black-400);
+  --ring: var(--black-300);
+  --ring-strong: var(--black-500);
+  --ring-soft: var(--black-100);
 }
 
-.dark ._third {
-  --background-base: 50 50 50;
-  --background-shadow: 60 60 60;
-  --background-opposite: "";
-  /* --ring-base: 47 47 47; */
-  /* --ring-strong: 70 70 70; */
-  /* --fore-heading-base: 255 255 255; */
-  /* --fore-heading-soft: 200 200 200; */
-  --fore-ground: 160 160 160;
-  /* --fore-soft: ""; */
-  /* --fore-strong: 210 210 210; */
-  /* --fore-support: 10 10 10; */
-  --symbol: 90 90 90;
+.dark ._ground {
+  --background: var(--black-300);
+  --background-alt: var(--black-500);
+  --background-shade: var(--black-500);
+  --ring: var(--black-400);
+  --ring-strong: var(--black-600);
+  --ring-soft: var(--black-200);
 }
 
-.dark ._action {
-  /* --background-base: var(--chateau-green-500); */
-  /* --background-shadow: var(--chateau-green-950); */
-  --background-opposite: "";
-  --ring-base: var(--chateau-green-500);
-  /* --ring-strong: 180 180 180; */
-  /* --fore-heading-base: 55 55 55; */
-  /* --fore-heading-soft: 80 80 80; */
-  --fore-ground: var(--chateau-green-500);
-  /* --fore-soft: ""; */
-  /* --fore-strong: 60 60 60; */
-  /* --fore-support: 10 10 10; */
-  --symbol: var(--chateau-green-500);
+body {
+  background-color: rgb(var(--background));
 }
 
-.dark ._secondary {
-  /* --background-base: var(--picton-blue-500); */
-  /* --background-shadow: var(--picton-blue-600); */
-  /* --background-opposite: var(--picton-blue-700); */
-  /* --ring-base: 47 47 47; */
-  /* --ring-strong: 70 70 70; */
-  /* --fore-heading-base: 255 255 255; */
-  /* --fore-heading-soft: 200 200 200; */
-  /* --fore-ground: 255 255 255; */
-  /* --fore-soft: ""; */
-  /* --fore-strong: 210 210 210; */
-  /* --symbol: 255 255 255; */
+* {
+  @apply border-ring;
 }
+
+/* } */

@@ -11,7 +11,7 @@ export default function Chip({ text, ...props }: ChipProps) {
     <div
       {...props}
       className={twMerge(
-        "flex-1 min-w-min grid place-items-center relative bg-gradient-to-b from-background-base to-middleground-shadow text-fore-ground h-8 rounded-[var(--rounded)] overflow-hidden px-4",
+        "flex-1 min-w-min grid place-items-center relative bg-gradient-to-b from-background-base to-middleground-shadow text-color h-8 rounded-[var(--rounded)] overflow-hidden px-4",
         props.className
       )}
     >

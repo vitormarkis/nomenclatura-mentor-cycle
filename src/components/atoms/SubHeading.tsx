@@ -9,7 +9,7 @@ export function SubHeading({ ...props }: SubHeadingProps) {
   return (
     <strong
       {...props}
-      className={twMerge("text-fore-soft text-sm font-medium mb-4", props.className)}
+      className={twMerge("text-heading-sub text-sm font-medium mb-4", props.className)}
     >
       {props.children}
     </strong>

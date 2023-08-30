@@ -9,10 +9,7 @@ export function MainHeading({ ...props }: MainHeadingProps) {
   return (
     <h2
       {...props}
-      className={twMerge(
-        "text-fore-heading-base text-2xl font-black leading-none",
-        props.className
-      )}
+      className={twMerge("text-heading text-2xl font-black leading-none", props.className)}
     >
       {props.children}
     </h2>

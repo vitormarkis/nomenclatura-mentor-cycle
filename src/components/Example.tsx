@@ -13,10 +13,9 @@ export function Example({ ...props }: ExampleProps) {
         "max-w-[60rem]",
         props.className,
         `
-        bg-background-base
-        border
+        bg-background
         border-ring-base
-        text-fore-ground
+        text-color
         `
       )}
     >
