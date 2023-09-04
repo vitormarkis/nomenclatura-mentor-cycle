@@ -8,6 +8,7 @@ import { useTheme } from "next-themes"
 import IconToggleRight from "./components/icons/IconToggleRight"
 import { useState } from "react"
 import IconCarrot from "./components/icons/IconCarrot"
+import { AlertDialogExample } from "./components/AlertDialogExample"
 
 const techs = ["React", "Next", "Node", "PHP"]
 
@@ -161,19 +162,21 @@ export function App() {
               <A.Paragraph className="mb-4">
                 Possui a classe <strong>_action</strong>, possui suas próprias estilizações
               </A.Paragraph>
-              <button
-                className={twMerge(
-                  "_action h-12 px-8 w-full flex items-center justify-center gap-2 rounded-lg",
-                  "bg-background text-color border border-ring-base hover:bg-background-shade",
-                  "outline-none focus:outline-1 focus:outline-offset-2 focus:outline-ring-strong"
-                )}
-              >
-                <span className="whitespace-nowrap">Com _action</span>
-                <IconCarrot
-                  size={24}
-                  className="text-symbol"
-                />
-              </button>
+              <AlertDialogExample>
+                <button
+                  className={twMerge(
+                    "_action h-12 px-8 w-full flex items-center justify-center gap-2 rounded-lg",
+                    "bg-background text-color border border-ring-base hover:bg-background-shade",
+                    "outline-none focus:outline-1 focus:outline-offset-2 focus:outline-ring-strong"
+                  )}
+                >
+                  <span className="whitespace-nowrap">Com _action</span>
+                  <IconCarrot
+                    size={24}
+                    className="text-symbol"
+                  />
+                </button>
+              </AlertDialogExample>
             </div>
           </div>
         </div>

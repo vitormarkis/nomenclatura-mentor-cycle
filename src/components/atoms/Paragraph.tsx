@@ -9,7 +9,7 @@ export function Paragraph({ ...props }: ParagraphProps) {
   return (
     <p
       {...props}
-      className={twMerge("leading-normal", props.className)}
+      className={twMerge("leading-normal text-color", props.className)}
     >
       {props.children}
     </p>

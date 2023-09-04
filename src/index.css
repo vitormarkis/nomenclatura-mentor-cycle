@@ -84,6 +84,11 @@
   --action-saturation: 71%;
 }
 
+._block {
+  --action-hue: 0;
+  --action-saturation: 71%;
+}
+
 ._action,
 ._action_fore {
   --action-color-50: var(--action-hue) var(--action-saturation) 90%;
