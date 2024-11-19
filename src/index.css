@@ -11,12 +11,12 @@
 #root {
   font-family: "Inter";
   /* font-family: "Roboto"; */
-  background-color: theme('colors.background.DEFAULT');
+  background-color: theme("colors.background.DEFAULT");
 }
 
 :root {
-  --action-hue: 240;
-  --action-saturation: 56%;
+  --action-hue: 190;
+  --action-saturation: 70%;
 
   --neutral-hue: 227;
   --neutral-sat: 11%;
@@ -175,4 +175,7 @@ body {
   @apply border-ring;
 }
 
+button {
+  background-image: linear-gradient(0deg, hsl(0, 0%, 0%, 4%), transparent);
+}
 /* } */
